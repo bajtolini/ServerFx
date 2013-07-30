@@ -61,9 +61,7 @@ public class ServerFx implements Runnable {
 
     public synchronized void handle(int ID, String input) {
         for (int i = 0; i < clientCount; i++) {
-            if (clients[findClient(ID)] != clients[i]) {
-                clients[i].send(input);
-            }
+            clients[i].send(input);
         }
     }
 
