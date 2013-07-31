@@ -18,12 +18,12 @@ public class ServerThread extends Thread {
     private int clientCount;
 
 
-    public ServerThread(ServerFx _server, Socket _socket) {
+    public ServerThread(ServerFx server, Socket socket) {
         super();
         this.stop = false;
-        server = _server;
-        socket = _socket;
-        ID = socket.getPort();
+        this.server = server;
+        this.socket = socket;
+        ID = this.socket.getPort();
     }
 
     public void send(String msg) {
